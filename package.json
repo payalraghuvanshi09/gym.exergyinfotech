@@ -1,0 +1,43 @@
+{
+  "name": "gym",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "NODE_ENV=development ./node_modules/.bin/netlify-lambda serve src",
+    "build": "NODE_ENV=production ./node_modules/.bin/netlify-lambda serve src",
+    "start": "next start -p 80000"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "alert": "^5.1.0",
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "^1.4.6",
+    "cookie-session": "^2.0.0",
+    "date-and-time": "^2.4.0",
+    "debug": "^4.3.4",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "express-flash-message": "^2.1.0",
+    "express-mysql-session": "^2.1.8",
+    "express-session": "^1.17.3",
+    "form-schema-validation": "^1.17.5",
+    "heroku": "^7.63.0",
+    "jsonwebtoken": "^8.5.1",
+    "memorystore": "^1.6.7",
+    "mysql": "^2.18.1",
+    "netlify-cli": "^11.7.1",
+    "netlify-lambda": "^2.0.15",
+    "node-popup": "^0.1.14",
+    "passport": "^0.6.0",
+    "path": "^0.12.7",
+    "popups": "^1.1.3",
+    "serverless-http": "^3.0.2"
+  }
+}

@@ -1,0 +1,221 @@
+
+<%- include('../../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Employees Data</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Employees</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> Employees Information</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- {% if errors %}
+                        {% each errors %}
+                            <p class="alert alert-danger">{{ this.msg }}</p>
+                        {{/each}}
+                    {{/if}} -->
+                        <div class="alert alert-alert" role="alert" id="error"> </div>
+                        <!-- form start -->
+                        <form method="post" action="/employees/update">
+
+                            <div class="card-body row">
+                                <!-- <div class="form-group col-md-3">
+
+                                    <label for="name">ID</label>
+                                    
+                                </div> -->
+                                <input type="hidden" class="form-control" id="en" placeholder="Enter Name"  name="id"
+                                        value="<%- data.id %>" required>
+                                <div class="form-group col-md-3">
+
+                                    <label for="name">User Name</label>
+                                    <input type="text" class="form-control" id="en" placeholder="Enter Name"  name="user_name"
+                                        value="<%- data.user_name %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="name">Father Name</label>
+                                    <input type="text" class="form-control" id="age" placeholder="Enter Father name"
+                                        name="fathers_name" value="<%- data.fathers_name %>" required>
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                  <label for="gender">Gender</label> <br>
+                                  <!-- <input type="text" class="form-control" id="mn" placeholder="Gender" name="gender"> -->
+                                  
+                                  <input type="radio" id="bn" name="gender" value="<%- data.gender %>" required>
+                                    <label for="gender">Male</label>
+                                  <input type="radio" id="bn" name="gender" value="<%- data.gender %>">
+                                    <label for="gender">Female</label><br>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Mobile Number</label>
+                  
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-phone" ></i></span>
+                                      </div>
+                                      <input value="<%- data.mobile%>" type="text" name="mobile" class="form-control" placeholder="Enter Mobile Number" data-inputmask='"mask": "(+91) 99999-99999"' data-mask required>
+                                    </div>
+                                    <!-- /.input group -->
+                                  </div>
+                                <div class="form-group col-md-3">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="ca"
+                                        placeholder="Enter Your Email" name="email" value="<%- data.email %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="address">Address </label>
+                                    <input type="text" class="form-control" id="ta" placeholder="Enter Your Address"
+                                        name="address" value="<%- data.address %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Date">Date of joining</label>
+                                    <input type="date" class="form-control" id="dpt" placeholder="Date of joining"
+                                        name="date_of_joining" value="<%- data.date_of_joining %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="date">Date of birth</label>
+                                    <input type="date" class="form-control" id="reference" placeholder="date of Birth"
+                                        name="date_of_birth" value="<%- data.date_of_birth %>" required>
+                                </div>
+                              
+                                <div class="form-group col-md-3">
+                                    <label for="Blood Group">Blood Group
+                                        
+                                    </label>
+                              
+                               
+                                    <select value="<%- data.blood_group %>"  name="blood_group" class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2" required>
+                                        <option>Blood Group</option>
+                                      <option>O-</option>
+                                      <option>O+</option>
+                                      <option>A+</option>
+                                      <option>A-</option>
+                                      <option>B-</option>
+                                      <option>B+</option>
+                                      <option>AB+</option>
+                                      <option>AB-</option>
+                                    </select>
+                            
+                                  </div>
+                               
+
+                                <div class="form-group col-md-3">
+
+                                    <label for="Weight">Weight
+                                    </label>
+                                    <input type="number" class="form-control" id="r&r" placeholder="Weight in kg" name="weight" value="<%- data.weight %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Height">Height
+                                    </label>
+                                    <input type="number" class="form-control" id="pf" placeholder="Height in cm's" name="height" value="<%- data.height %>" required>
+                                </div>
+                              
+                                
+                                <div class="form-group col-md-3">
+                                  <label for="Subscriptions" name = "type_of_subscription">Types Of Subscriptions</label>
+                                  <select  name="type_of_subscription" class="custom-select form-control-border border-width-2" id="exampleSelectBorderWidth2" required>
+                                      <option disabled >Select Subscriptions</option>
+
+                                      <% for(var i=0; i < subs.length ; i++ )  { %>
+                              
+                                          <option  <% if(subs[i].id == data.type_of_subscription){ %>
+                                            selected="selected" 
+                                            <% } %>
+                                         value="<%= subs[i].id%>"><%= subs[i].name %></option>
+                                          
+                                         <% } %>
+                                      <!-- <% for(var i=0; i < data.length ; i++ )  { %>
+                                      <option value="<%= data[i].name%>"><%= data[i].id %></option>
+                                      <% } %> -->
+                                    </select>
+                                  </div> 
+
+                                  <div class="form-group col-md-3">
+                                    <label for="Marital Status">Marital Status
+                                    </label> <br>
+                       
+                                                        <input type="radio" id="bn" name="marital_status" value="<%- data.marital_status %>" required>
+                                                          <label for="marital_status">Married</label>
+                                                        <input type="radio" id="bn" name="marital_status" value="<%- data.marital_status %>">
+                                                          <label for="marital_status">Single</label><br>
+                                  </div>
+                              
+                                <div class="form-group col-md-3">
+                                  <label>Emergency contact Number</label>
+                
+                                  <div class="input-group">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                    </div>
+                                    <input value="data.emergency_contact %>" type="text" name="emergency_contact" class="form-control" placeholder="Emergency contact Number" data-inputmask='"mask": "(+91) 99999-99999"' data-mask required>
+                                  </div>
+                                  <!-- /.input group -->
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Referance Name">Referance Name
+                                    </label>
+                                    <input type="text" class="form-control" id="an" placeholder="Referance Name"
+                                        name="reference_name" value="<%- data.reference_name %>" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Reference Mobile Number</label>
+                  
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                      </div>
+                                      <input value="<%- data.reference_mobile_number%>" type="text" name="reference_mobile_number" class="form-control" placeholder="Enter Reference Mobile Number" data-inputmask='"mask": "(+91) 99999-99999"' data-mask required>
+                                    </div>
+                                    <!-- /.input group -->
+                                  </div>
+                              
+                                <!-- <div class="form-group col-md-3">
+                                    <label for=" user TYPE
+                                            ">User type
+                                    </label>
+                                    <input type="text" class="form-control" id="vt" placeholder="User type
+                                            " name="user_type">
+                                </div> -->
+
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a href="./index.ejs"></a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<%- include('../../partials/footer') %>
