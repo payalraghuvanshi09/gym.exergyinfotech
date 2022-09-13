@@ -54,8 +54,8 @@ module.exports = {
         login( body.email, (err,results) => {
           
           if (!results) {
-            res.send("Login Failed")
-            res.redirect('/auth');
+            // res.send("Login Failed")
+            res.redirect('/')
           }
           const result = compareSync(body.password,results.password);
           
@@ -85,13 +85,14 @@ module.exports = {
               }  
           } else {
             req.session.message = {status: 'danger', message: 'Failed to login, check password.'}
-            
             req.session.save(() => {
                 res.redirect('/')
             });
           }
         });
       }
+     
+ 
   
 },
 logout: (req, res, next) => {
@@ -108,5 +109,5 @@ logout: (req, res, next) => {
   } else {
     res.end()
   }
-} 
+  }  
 }

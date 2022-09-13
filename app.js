@@ -2,8 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const serverless = require("serverless-http");
 const session = require('express-session');
-// const MemoryStore = require('memorystore')(session);
-// var cookieSession = require('cookie-session')
 const date = require('date-and-time');
 
 // const bodyParser = require('body-parser')
@@ -32,12 +30,12 @@ const router = express.Router()
 const now = new Date();
 const value = date.format(now, 'YYYY/MM/DD HH:mm:ss');
 // console.log("current date and time : " + value)
+const oneDay = 1000 * 60 * 60 * 24;
 //-momery unleaked---------
 app.set('trust proxy', 1);
 module.exports.handler = serverless(app)
 app.use('/.netlify/functions/api', router)
 
-const oneDay = 1000 * 60 * 60 * 24;
 
 app.use(
   session({
@@ -77,7 +75,7 @@ app.set("view engine", "ejs");
 
 
 
-app.use(session({secret: 'ssshhhhh'}));
+// app.use(session({secret: 'ssshhhhh'}));
 app.use("/gym-software",authRouter)
 // app.use("/users", checkLoggedIn, usersRouter);
 app.use("/", authRouter)
