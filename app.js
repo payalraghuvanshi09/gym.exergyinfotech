@@ -1,6 +1,5 @@
 require("dotenv").config();
 const express = require("express");
-const serverless = require("serverless-http");
 const session = require('express-session');
 const date = require('date-and-time');
 
@@ -33,8 +32,6 @@ const value = date.format(now, 'YYYY/MM/DD HH:mm:ss');
 const oneDay = 1000 * 60 * 60 * 24;
 //-momery unleaked---------
 app.set('trust proxy', 1);
-module.exports.handler = serverless(app)
-app.use('/.netlify/functions/api', router)
 
 
 app.use(
