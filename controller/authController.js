@@ -61,7 +61,7 @@ module.exports = {
           
           if (result == true) {
             let email = req.body.email;
-            let password= req.body.password;
+            let password= req.body.password; UD/Dh9Cfawru
          
            
             res.setHeader('Content-Type', 'text/html');
