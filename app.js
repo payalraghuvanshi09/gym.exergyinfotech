@@ -106,7 +106,7 @@ if (pool) {
   console.log("Cant connect to db, Check ur db connection");
 }
 
-app.listen(process.env.APP_PORT , () => {
+app.listen(process.env.APP_PORT  , () => {
   
   console.log("Server is running at port 8000..", process.env.APP_PORT);
 });
