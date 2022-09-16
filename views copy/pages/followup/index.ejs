@@ -1,0 +1,171 @@
+<%- include('../../partials/header') %>
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Followups</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Follow Up</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Followups Data</h3>
+                <!-- <a href="/followup/add" class="btn btn-info float-right">Add</a> -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <div class="col-12">
+                  <div class="col-12 ">
+                    <div class="card card-primary card-outline card-outline-tabs">
+                        <div class="card-header p-0 border-bottom-0">
+                            <ul class="nav nav-tabs" id="custom-tabs-four-tab" role="tablist">
+                                <li class="nav-item">
+                                    <a class="nav-link active" id="custom-tabs-four-home-tab" data-toggle="pill" href="#custom-tabs-four-home"
+                                        role="tab" aria-controls="custom-tabs-four-home" aria-selected="false">Today's</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="custom-tabs-four-profile-tab" data-toggle="pill"
+                                        href="#custom-tabs-four-profile" role="tab" aria-controls="custom-tabs-four-profile"
+                                        aria-selected="true">Upcoming</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-body">
+                            <div class="tab-content" id="custom-tabs-four-tabContent">
+                                <div class="tab-pane fade" id="custom-tabs-four-home" role="tabpanel"
+                                    aria-labelledby="custom-tabs-four-home-tab">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th> Sr.</th>
+                                            <th>Name Of Visitors</th>
+                                            <th>Mobile Number</th>
+                                            <th>Visiting Date</th>
+                                            <th>Last Calling Date</th>
+                                            <th>Last Calling Feedback</th>
+                                            <th>Next Call Scheduled</th>        
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <% for(var i=0; i < data.length; i++ ) { %>
+                                                <td>
+                                                    <%= i+1 %>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].name%>
+                                                </td>
+                                                <td>
+                                                    <%=data[i].mobile_number%>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].date_of_visit %>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].last_calling_date %>
+                                                </td>        
+                                                <td>
+                                                    <%= data[i].feedback_of_client %>
+                                                </td>
+                                                <td>
+                                                    <%= data[i].next_call_schedule%>
+                                                </td>
+                                                <td>
+                                                    <a href="/followup/add" class="btn btn-primary btn sm">followup</a>
+                                                </td>
+                                            </tr>
+                                            <% } %>        
+                                        </tbody>    
+                                    </table>
+                                </div>
+                                <div class="tab-pane fade active show" id="custom-tabs-four-profile" role="tabpanel"
+                                    aria-labelledby="custom-tabs-four-profile-tab">
+                                    <table class="table table-bordered table-striped">
+                                        <thead>
+                                        <tr>
+                                            <th> Sr.</th>
+                                            <th>Visitors</th>
+                                            <th>Mobile Number</th>
+                                            <th>Visiting Date</th>
+                                            <th>Last Calling Date</th>
+                                            <th>Last Calling Feedback</th>
+                                            <th>Next Call Scheduled</th>        
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <% for(var i=0; i < up.length; i++ ) { %>
+                                                <td>
+                                                    <%= i+1 %>
+                                                </td>
+                                                <td>
+                                                    <%= up[i].name%>
+                                                </td>
+                                                <td>
+                                                    <%=up[i].mobile_number%>
+                                                </td>
+                                                <td>
+                                                    <%= up[i].date_of_visit %>
+                                                </td>
+                                                <td>
+                                                    <%= up[i].last_calling_date %>
+                                                </td>        
+                                                <td>
+                                                    <%= up[i].feedback_of_client %>
+                                                </td>
+                                                <td>
+                                                    <%= up[i].next_call_schedule%>
+                                                </td>
+                                                <td>
+                                                    <a href="/followup/add" class="btn btn-primary btn sm">followup</a>
+                                                </td>
+                                            </tr>
+                                            <% } %>        
+                                        </tbody>    
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                
+                    </div>
+                </div>
+                </div>
+              
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+
+    <!-- /.content -->
+  </div>
+  <hr>
+
+
+
+  <!-- /.content-wrapper -->
+  <%- include('../../partials/footer') %>

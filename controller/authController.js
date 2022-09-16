@@ -57,11 +57,13 @@ module.exports = {
             // res.send("Login Failed")
             res.redirect('/')
           }
+          console.log("resultsss=>",results);
           const result = compareSync(body.password,results.password);
+          console.log("resulttt=>",result);
           
           if (result == true) {
             let email = req.body.email;
-            let password= req.body.password; UD/Dh9Cfawru
+            let password= req.body.password;
          
            
             res.setHeader('Content-Type', 'text/html');

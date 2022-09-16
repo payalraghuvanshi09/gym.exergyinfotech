@@ -65,6 +65,7 @@ module.exports = {
               values(?,?,?)`,
       [data.name, data.email, data.password],
       (error, results, fields) => {
+
         if (error) {
           return callback(error);
         }
@@ -78,6 +79,8 @@ module.exports = {
       `Select * from user_table where email=?  and user_type =?`,
       [email, '1'],
       (error, results, fields) => {
+
+        console.log("login res =>", results);
 
         if (error) {
           // res.send(error.message)

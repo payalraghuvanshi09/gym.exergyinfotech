@@ -1,0 +1,91 @@
+
+<%- include('../../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Salary Table</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Salary</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> salary Information</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="post" action="/salary/create">
+
+                            <div class="card-body row">
+                                <!-- <div class="form-group col-md-3"> -->
+
+                                    <!-- <label for="id"> ID</label> -->
+                                    <input type="hidden" class="form-control" id="en" placeholder=" ID" name="id">
+                                <!-- </div>  -->
+                                
+                                <div class="form-group col-md-3">
+                                  <label for="employee">Employee</label>
+                                  <select class="form-control select2" style="width: 100%;" name="user_id" value="" required>
+                                      <option selected="selected">Select Employee</option>
+                                      <% for(var i=0; i < data.length ; i++ )  { %>
+                                      <option value="<%= data[i].id %>"><%= data[i].user_name %></option>
+                                      <% } %>
+                                    </select>
+                              </div>
+                                <div class="form-group col-md-3">
+                                    <label for="amount">Monthly amount</label>
+                                    <input type="text" class="form-control" id="age" placeholder="Enter Date" name="monthly" value="" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control" id="mn" placeholder="Login Time" name="dates" value="" required>
+                                </div>
+                                <div class="form-group col-md-3">
+                                  <label for="amount">PAN Card Number</label>
+                                  <input type="text" class="form-control" id="age" placeholder="PAN Number" name="pan_number" value="" required>
+                              </div>
+                              <div class="form-group col-md-3">
+                                <label for="amount">Bank Account Number</label>
+                                <input type="text" class="form-control" id="age" placeholder="Account Number" name="bank_acc_no" value="" required>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="amount">Branch IFSC Code</label>
+                              <input type="text" class="form-control" id="age" placeholder="IFSC Code" name="branch_ifsc_code" value="" required>
+                          </div>
+                          <div class="form-group col-md-3">
+                            <label for="amount">Branch Name</label>
+                            <input type="text" class="form-control" id="age" placeholder="Enter Date" name="branch_name" value="" required>
+                        </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<%- include('../../partials/footer') %>

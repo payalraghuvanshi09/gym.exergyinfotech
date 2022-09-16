@@ -1,0 +1,70 @@
+
+<%- include('../../partials/header') %>
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Subscription Table</h1>
+                    </div>
+                </div>
+            </div><!-- /.container-fluid -->
+        </section>
+
+        <!-- Main content -->
+
+        <section class="content">
+            <div class="container-fluid">
+
+                <div class="row">
+                    <!-- left column -->
+                    <div class="col-md-12">
+                        <!-- general form elements -->
+                        <div class="card card-primary">
+                            <div class="card-header">
+                                <h3 class="card-title"> Subscriptions Information</h3>
+                            </div>
+                            <!-- /.card-header -->
+                            <!-- form start -->
+                            <form method="post" action="/subscriptions/update">
+
+                                <div class="card-body row">
+                                    <!-- <div class="form-group col-md-3">
+                                        <label for="id">Id</label>
+  
+                                    </div> -->
+                                    <input type="hidden"  class="form-control" id="en" placeholder="ID" value="<%- data.id %>" name="id">
+
+                                    <div class="form-group col-md-3">
+                                        <label for="name">Name</label>
+                                        <input type="text" class="form-control" id="age" placeholder="Enter Name" value="<%- data.name %>" name="name">
+                                    </div>
+                                   
+                                    <div class="form-group col-md-3">
+                                        <label for="Duration">Duration</label>
+                                        <input type="text" class="form-control" id="mn" placeholder="Duration" value="<%- data.duration %>" name="duration">
+                                    </div>
+
+                                    <div class="form-group col-md-3">
+                                        <label for="Price">Price </label>
+                                        <input type="text" class="form-control" id="ca"
+                                            placeholder="Enter Price" value="<%- data.price %>" name="price">
+                                    </div>
+
+                                </div>
+                                <div class="card-footer">
+                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <!-- <button type="submit" class="btn btn-primary">Back</button> -->
+                    
+                                    <a href="./index.ejs"></a>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+
+ 
+    <%- include('../../partials/footer') %>

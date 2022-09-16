@@ -1,0 +1,113 @@
+
+<%- include('../../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Followups</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Visitors</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> Follow Up Information</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- {% if errors %}
+                        {% each errors %}
+                            <p class="alert alert-danger">{{ this.msg }}</p>
+                        {{/each}}
+                    {{/if}} -->
+                        <div class="alert alert-alert" role="alert" id="error"> </div>
+                        <!-- form start -->
+                        <form method="post" action="/followup/create">
+
+                            <div class="card-body row">
+                              
+                              <div class="form-group col-md-3">
+                                <label for="visitors">Visitors</label>
+                                <select class="form-control select2" style="width: 100%;" name="visitor_id" id="visitor" value="" required>
+                                    <option disabled selected="selected">Select Visitors</option>
+                                    <% for(var i=0; i < data.length ; i++ )  { %>
+                                    <option value="<%= data[i].id%>"><%= data[i].name %></option>
+                                    <% } %>
+                                  </select>
+                            </div>
+                            <div class="form-group col-md-3">
+                              <label for="number">Mobile Number</label>
+                              <select class="form-control select2" style="width: 100%;" name="mobile_number" id="visitor" value="" required>
+                                  <option selected="selected">Select Visitors</option>
+                                  <% for(var i=0; i < data.length ; i++ )  { %>
+                                  <option value="<%= data[i].mobile_number%>"><%= data[i].mobile_number%></option>
+                                  <% } %>
+                                </select>
+                          </div>
+                           
+                    
+                              <div class="form-group col-md-3">
+                                <label for="visitors">Visiting Date</label>
+                                <select class="form-control select2" style="width: 100%;" name="date_of_visit" id="visitor" required>
+                                  <option selected="selected">Select Visitors</option>
+                                  <% for(var i=0; i < data.length ; i++ )  { %>
+                                  <option value="<%= data[i].date_of_visit%>"><%= data[i].date_of_visit%></option>
+                                  <% } %>
+                                </select>
+                               
+                            </div>
+                                <div class="form-group col-md-3">
+                                    <label for="Feedback">Client Feedback</label>
+                                    <input type="text" class="form-control" id="mn" placeholder="Feedback" name="feedback_of_client" value="" required>
+                                </div>
+                            
+                                  <div class="form-group col-md-3">
+                                    <label for="date"> Next Call Schedule</label>
+                                    <input type="date" class="form-control" id="ta" placeholder="Expected Date Of Joining"
+                                        name="next_call_schedule" value="" required>
+                                </div>
+                              
+                                <div class="form-group col-md-3">
+                                  <label for="date">Feedback Calling Date</label>
+                                 
+                                  <input type="date" class="form-control" placeholder="last calling date"
+                                      name="last_calling_date" value="" required>
+                              </div>
+                            
+                            
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<%- include('../../partials/footer') %>
+
+
+

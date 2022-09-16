@@ -1,5 +1,6 @@
 require("dotenv").config();
 const express = require("express");
+
 const session = require('express-session');
 const date = require('date-and-time');
 
@@ -25,14 +26,11 @@ const bodyParser = require('body-parser')
 const jsonwebtoken = require('jsonwebtoken')
 
 app.use(flash());
-const router = express.Router()
+
 const now = new Date();
 const value = date.format(now, 'YYYY/MM/DD HH:mm:ss');
-// console.log("current date and time : " + value)
+console.log("current date and time : " + value)
 const oneDay = 1000 * 60 * 60 * 24;
-//-momery unleaked---------
-app.set('trust proxy', 1);
-
 
 app.use(
   session({
@@ -46,6 +44,8 @@ app.use(
     // cookie: { maxAge: 6000 } /* 6000 ms? 6 seconds -> wut? :S */
   })
 );
+
+app.use(express.static(__dirname + "/views/public"));
 
 app.use(function (req, res, next) {
   res.set('Cache-Control', 'no-cache, private, no-store, must-revalidate, max-stale=0, post-check=0, pre-check=0');
@@ -106,7 +106,7 @@ if (pool) {
   console.log("Cant connect to db, Check ur db connection");
 }
 
-app.listen(process.env.APP_PORT || 8000, () => {
+app.listen(process.env.APP_PORT , () => {
   
   console.log("Server is running at port 8000..", process.env.APP_PORT);
 });

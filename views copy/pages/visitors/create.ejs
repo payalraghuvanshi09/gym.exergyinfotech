@@ -1,0 +1,106 @@
+
+<%- include('../../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Visitors Table</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Visitors</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> Visitors Information</h3>
+                        </div>
+                       
+                        <div class="alert alert-alert" role="alert" id="error"> </div>
+                        <!-- form start -->
+                        <form method="post" action="/visitors/create">
+
+                            <div class="card-body row">
+                              
+                                <div class="form-group col-md-3">
+                                
+                                    <label for="name"> Name</label>
+                                    <input type="text" class="form-control" id="en" placeholder="Enter Name" name="name"
+                                        value="">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label for="age">Age</label>
+                                    <input type="age" class="form-control" id="age" placeholder="Enter Your Age"
+                                        name="age" value="">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="gender">Gender</label>
+                                    <input type="text" class="form-control" id="mn" placeholder="Gender" name="gender">
+                                </div>
+                                <div class="form-group col-md-3">
+                                    <label>Mobile Number</label>
+                  
+                                    <div class="input-group">
+                                      <div class="input-group-prepend">
+                                        <span class="input-group-text"><i class="fas fa-phone"></i></span>
+                                      </div>
+                                      <input type="text" name="mobile_number" class="form-control" placeholder="Enter Mobile Number" data-inputmask='"mask": "(+91) 99999-99999"' data-mask required>
+                                    </div>
+                                    <!-- /.input group -->
+                                  </div>
+                                  <div class="form-group col-md-3">
+                                    <label for="Date">Date of Visiting </label>
+                                    <input type="date" class="form-control" id="dpt" placeholder="Date of Visiting"
+                                        name="date_of_visit" required>
+                                </div>
+                               
+                                <div class="form-group col-md-3">
+                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="ca"
+                                        placeholder="Enter Your Email" name="email" required>
+                                </div>
+                                
+                                <div class="form-group col-md-3">
+                                  <label for="date">Expected Date Of Joining </label>
+                                  <input type="date" class="form-control" id="ta" placeholder="Expected Date Of Joining"
+                                      name="expected_date_of_joining" required>
+                              </div>
+                                <div class="form-group col-md-3">
+                                    <label for="text">Remark</label>
+                                    <input type="text" class="form-control" id="reference" placeholder="Remark"
+                                        name="is_active" required>
+                                </div>
+                            
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<%- include('../../partials/footer') %>

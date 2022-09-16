@@ -1,0 +1,100 @@
+
+<%- include('../../partials/header') %>
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Visitors</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Visitors</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+
+            <div class="card" >
+              <div class="card-header">
+                <h3 class="card-title">Visitors Data</h3>
+                <a href="/visitors/add" class="btn btn-info float-right">Add</a>
+              </div>
+              <!-- /.card-header -->
+                <table id="example_tab" class="table table-bordered table-hover" data-resizable="true">
+                  <thead>
+                  <tr>
+                    <th> Sr.</th>
+                   
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Gender</th>
+                    <th>Mobile Number</th>
+                    <th>Date of visit</th>
+                    <th>Expected Date Of Joining</th>
+                
+               
+                    
+                   
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <% for(var i=0; i < data.length; i++ )  { %>
+                    <td><%= i+1 %></td>
+                    
+                    <td><%= data[i].name%>
+                    </td>
+                    <td><%= data[i].age %></td>
+                    <td><%= data[i].gender %>
+                    </td>
+                    <td><%= data[i].mobile_number %></td>
+                    <td><%= data[i].date_of_visit%>
+                    </td>
+                    <td><%= data[i].expected_date_of_joining %>
+                     
+                    <td>
+                      <a href="/followup/add" class="btn btn-primary btn sm">Take followup</a> 
+                    </td>
+                    <td>
+                      <a href="/visitors/history/<%=data[i].id%>" class="btn btn-primary btn sm">Followup's History</a> 
+                    </td>
+                    <td>
+                      <a href="/visitors/edit/<%=data[i].id%>" class="btn btn-primary btn sm">Edit</a> 
+                      <a href="/visitors/delete/<%=data[i].id%>" class="btn btn-primary btn sm">Delete</a>
+  
+                    </td>
+                    
+                    
+       
+                  </tr>
+                  <% } %>
+                  </tbody>
+                 
+                  </tfoot>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+<%- include('../../partials/footer') %>

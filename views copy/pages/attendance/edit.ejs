@@ -1,0 +1,68 @@
+
+<%- include('../../partials/header') %>
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Attendance Table</h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+
+    <section class="content">
+        <div class="container-fluid">
+
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                        <div class="card-header">
+                            <h3 class="card-title"> Attendance Information</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="post" action="/attendance/update">
+
+                            <div class="card-body row">
+                              
+
+                                    <input type="hidden"  class="form-control" id="en" placeholder="ID" value="<%- data.id %>" name="id">
+                                    <input type="hidden" class="form-control" id="age" placeholder="Enter Name" value="<%- data.user_id %>" name="user_id">
+                                <div class="form-group col-md-3">
+                                    <label for="date">Date</label>
+                                    <input type="date" class="form-control" id="age" placeholder="Date" value="<%- data.date %>" name="date">
+                                </div>
+                               
+                                <div class="form-group col-md-3">
+                                    <label for="login time">Login time</label>
+                                    <input type="time" class="form-control" id="mn" placeholder="Login time" value="<%- data.login_time %>" name="login_time">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="logout time">Logout time </label>
+                                    <input type="time" class="form-control" id="ca"
+                                        placeholder="Logout time" value="<%- data.logout_time %>" name="logout_time">
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <!-- <button type="submit" class="btn btn-primary">Back</button> -->
+                
+                                <a href="./index.ejs"></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+<%- include('../../partials/footer') %>

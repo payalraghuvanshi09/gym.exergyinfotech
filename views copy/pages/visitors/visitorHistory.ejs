@@ -1,0 +1,141 @@
+<%- include('../../partials/header') %>
+
+  <div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <div class="container-fluid">
+        <div class="row mb-2">
+          <div class="col-sm-6">
+            <h1>Followups</h1>
+          </div>
+          <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active">Follow Up</li>
+            </ol>
+          </div>
+        </div>
+      </div><!-- /.container-fluid -->
+    </section>
+    <section class="content">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="card card-widget widget-user-2">
+
+              <div class="widget-user-header bg-warning">
+              <div class="widget-user-image">
+              <!-- <img class="img-circle elevation-2" src="../dist/img/user7-128x128.jpg" alt="User Avatar"> -->
+              <% for(var i=0; i < vis.length; i++ )  { %>
+              </div>
+              
+              <h1 style="font-weight:bold;" class="widget-user-username"><%= vis[i].name %></h1>
+              <!-- <h5 class="widget-user-desc">Lead Developer</h5> -->
+              </div>
+              <div class="card-footer p-0">
+               
+              <ul class="nav flex-column">
+              <li class="nav-item">
+              <a href="#" class="nav-link">
+             Age<span class="float-right badge bg-primary"><%= vis[i].age %></span>
+              </a>
+              </li>
+              <li class="nav-item">
+              <a href="#" class="nav-link">
+             Gender<span class="float-right badge bg-info"><%= vis[i].gender %></span>
+              </a>
+              </li>
+              <li class="nav-item">
+              <a href="#" class="nav-link">
+              Mobile Number <span class="float-right badge bg-success"><%= vis[i].mobile_number %></span>
+              </a>
+              
+              </li>
+              <li class="nav-item">
+              <a href="#" class="nav-link">
+           Visiting Date <span class="float-right badge bg-danger"><%= vis[i].date_of_visit%></span>
+              </a>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+             Expected Date Of Joining <span class="float-right badge bg-danger"><%- vis[i].expected_date_of_joining %></span>
+                </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+               Remark<span class="float-right badge bg-danger"><%- vis[i].is_active%></span>
+                  </a>
+                  </li>
+              </ul>
+              <% } %>
+              </div>
+              </div>
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">Followups </h3>
+                <!-- <a href="/followup/add" class="btn btn-info float-right">Add</a> -->
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body">
+                <table class="table table-bordered table-striped">
+                  <thead>
+                    <tr>
+                      <th> Sr.</th>
+                      <th>Last Calling Date</th>
+                      <th>Feedback</th>
+                      <th>Next Calling Date</th>
+
+
+                      
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <% for(var i=0; i < data.length; i++ ) { %>
+                        <td>
+                          <%= i+1 %>
+                        </td>
+
+                        <td>
+                          <%= data[i].last_calling_date %>
+                        </td>
+
+                        <td>
+                          <%= data[i].feedback_of_client %>
+                        </td>
+                        <td>
+                          <%= data[i].next_call_schedule%>
+                        </td>
+
+                        </td>
+                        <!-- <td>
+                        <a href="/followup/add" class="btn btn-primary btn sm">followup</a> 
+                      </td>
+                       -->
+
+                    </tr>
+                    <% } %>
+
+                  </tbody>
+
+                  </tfoot>
+                </table>
+
+
+              </div>
+              <!-- /.card-body -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.col -->
+        </div>
+        <!-- /.row -->
+      </div>
+      <!-- /.container-fluid -->
+    </section>
+
+    <!-- /.content -->
+  </div>
+  <!-- /.content-wrapper -->
+  </div>
+  <%- include('../../partials/footer') %>

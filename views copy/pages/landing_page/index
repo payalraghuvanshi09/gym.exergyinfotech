@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./styles.css">
+  <title>Gym Software</title>
+</head>
+<body>
+  <section style="position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: url('../img/pexels-estudio-polaroid-3112004.jpg');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 100px;">
+    <header style=" position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;">
+      <a href="#" class="logo" style="  position: relative;
+      font-size: 2em;
+      color: #fff;
+      text-transform: uppercase ;
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 1px;"> Exergy Infotech</a>
+
+   
+      <div class="toogleMenu" onclick="toggleMenu()"></div>
+      <ul class="navigation" style=" position: relative;
+      display: flex;">
+        <li style=" list-style: none;"> <a  style="  display: inline-block;
+          color: #fff;
+          margin-right: 40px;
+          text-decoration: none;" href="../auth/login.ejs">Login</a></li>
+        <li style=" list-style: none;"><a style="  display: inline-block;
+          color: #fff;
+          margin-right: 40px;
+          text-decoration: none;" href="#">About</a></li>
+        <li style=" list-style: none;"><a style="  display: inline-block;
+          color: #fff;
+          margin-right: 40px;
+          text-decoration: none;" href="#">Trainers</a></li>
+        <li style=" list-style: none;"><a style="  display: inline-block;
+          color: #fff;
+          margin-right: 40px;
+          text-decoration: none;" href="#">Contact</a></li>
+      </ul>
+    </header>
+    <div class="content" style=" max-width: 100%;">
+    <div class="contentBx">
+      <h2 style="font-size: 4em;
+      color: #fff;
+      line-height: 1em;">Build Perfect Body With Clean Mind</h2>
+      <p style=" font-size: 1.1em;
+      color: #fff;
+      font-weight: 300;
+      margin: 20px 0;">
+        ‘All progress takes place outside the comfort zone.’
+      </p>
+      <a style="  display: inline-block;
+      padding: 10px 30px;
+      background: #03a9f4;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+     letter-spacing: 1px;" href="#">Get Started</a>
+    </div>
+    </div>
+    <ul class="sci" style="position: absolute;
+    bottom: 30px;
+    display: flex;">
+      <li style=" list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;"><a style=" position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5
+    );" href="#"><img src="../img/icons8-facebook-48.png" alt="facebook"></a>Facebook</li>
+      <li style=" list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;"><a style=" position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5
+    );" href="#"><img src="../img/icons8-instagram-48.png" alt="Instagram"></a>Instagram</li>
+      <li style=" list-style: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;"><a style=" position: relative;
+    display: inline-block;
+    margin-right: 20px;
+    filter: invert(1);
+    transform: scale(0.5
+    );" href="#"><img src="../img/icons8-twitter-48.png" alt="Twitter"></a> Twitter</li>
+    </ul>
+  </section>
+  <script type="text/javascript">
+    function toogleMenu(){
+      const toogleMenu  = document.querySelector('.toggleMenu')
+      const navigation = document.querySelector('.navigation')
+      toogleMenu.classList.toggle('active')
+      navigation.classList.toggle('active')
+    }
+  </script>
+</body>
+</html>
